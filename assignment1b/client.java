@@ -1,6 +1,6 @@
 import java.rmi.*; 
 import java.rmi.registry.*;  
-
+import java.util.*;
  class client {  
    
    public static void main(String[] args) {  
@@ -10,11 +10,15 @@ import java.rmi.registry.*;
     
       
          inf stub = (inf) registry.lookup("inf"); 
-    
-       
+         Scanner s = new Scanner(System.in);
+         System.out.print("Enter the first No : " );
+         int a = s.nextInt();
+         System.out.print("Enter the second No : " );
+         int b= s.nextInt();
+
          
          
-          System.out.println(stub.add(5,6)); 
+          System.out.println("Result of Addition is :" + stub.add(a,b)); 
       } catch (Exception e) {
          System.err.println("Client exception: " + e.toString()); 
          e.printStackTrace(); 
