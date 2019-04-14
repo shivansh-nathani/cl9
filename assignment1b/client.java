@@ -12,9 +12,9 @@ import java.util.*;
          inf stub = (inf) registry.lookup("inf"); 
          Scanner s = new Scanner(System.in);
          System.out.print("Enter the first No : " );
-         int a = s.nextInt();
+         String a = s.nextLine();
          System.out.print("Enter the second No : " );
-         int b= s.nextInt();
+         String b= s.nextLine();
 
          
          

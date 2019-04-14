@@ -1,8 +1,9 @@
 class Implemented implements inf{
     @Override
-    public int add(int x,int y)
+    public String add(String x,String y)
     {
-        return x+y;
+        StringBuilder s = new StringBuilder(x);
+        return s.append(y).toString();
     }
 
 }
