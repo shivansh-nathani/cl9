@@ -1,8 +1,8 @@
 import java.io.DataInput;
-import java.io.DataInputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+import java.lang.Math; 
 class server{
 public static void main(String[] args) throws Exception {
 ServerSocket ss = new ServerSocket(6969);
@@ -19,7 +19,7 @@ t.start();
 class handler extends Thread{
 Socket s = null;
 DataInputStream dis = null;
-
+DataOutputStream dos = null;
 public handler(Socket s,DataInputStream dis)
 {
 this.s= s;
@@ -28,7 +28,12 @@ this.dis= dis;
 public void run() {
 try{
 
-System.out.println(dis.readUTF());
+double data1 = dis.readDouble();
+double data2 = dis.readDouble();
+
+dos = new DataOutputStream(s.getOutputStream());
+dos.writeDouble(Math.pow(data1,data2));
+
 
 }
 catch(Exception e)
